@@ -6,3 +6,5 @@ new change 1
 I can do it!
 Second World War
 1939-1945
+3+4=7
+4*7=28
