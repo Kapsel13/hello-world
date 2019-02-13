@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Opinie użytkowników</title> 
+  <meta name="description" content= "Podstrona  poświęcona opiniom użytkowników">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <link rel="stylesheet" href="css/opinie.css">
+</head>
+<body><header id="H">
+	<a href="index.php">
+		<h1>Marcin Kowalski</h1>
+		<h1>Moje przygody z edukacją</h1>
+	</a>
+	<h2>Opinie użytkowników</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.php">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="semestr1.php">Semestr I</a>
+	</div>
+	<div class="link">
+	 <a href="semestr2.php">Semestr II</a>
+	</div>
+	<div class="link">
+	 <a href="semestr3.php">Semestr III</a>
+	</div>
+	<div class="link">
+	 <a href="semestr4.php">Semestr IV</a>
+	</div>
+	<div class="link">
+	 <a href="semestr5.php">Semestr V</a>
+	</div>
+	<div class="link">
+	 <a href="hobby1.php">Kino</a>
+	</div>
+	<div class="link">
+	 <a href="hobby2.php">Tenis ziemny</a>
+	</div>
+</nav>
+<article>
+	<h2>Nowy wpis</h2>
+	    <form method = "post" action="add.php">
+		<div class="new_opinion">
+			<div class="new_opinion_p1">
+   				<div class="item_row">
+   				 <label>Nick:</label>
+   				 <input type= "text" name= "NICK" maxlength="15" placeholder="Podaj nick:" required>
+  			        </div>
+				<div class="item_row">
+				 <label>Temat:</label>
+				 <select name="SUBJ">
+      				 <option value="S1">Semestr I</option>
+      				 <option value="S2">Semestr II</option>
+      				 <option value="S3">Semestr III</option>
+     				 <option value="S4">Semestr IV</option>
+     				 <option value="S5">Semestr V</option>
+      				 <option value="mainpage">Strona główna</option>
+      				 <option value="Kino">Kino</option>
+      				 <option value="Tenis">Tenis ziemny</option>
+    				 </select>
+  			       </div>
+			       <div class="button_row">
+  					  <input type="submit" value="Dodaj wpis">
+   				</div>
+			</div>
+			<div class="new_opinion_p2">
+				<div class="item_row">
+					<label>Opinia:</label>
+  				</div>
+				<div class="info_row">
+    					<textarea name="INFO" rows="20" cols="70" placeholder="Podaj opinię:" required></textarea>
+   				</div>
+			</div>
+		</div>	
+	  </form>
+	<h2>Aktualne wpisy</h2>
+		 <table><tr><th>Nick</th><th>Data</th><th>Temat</th><th>Info</th></tr>
+		<tr><td>user9</td><td>2018-06-13 18:53:31</td><td>Strona główna</td><td>Poprawne ładowanie zdjęcia za pomocą obietnic</td></tr>
+
+<tr><td>user8</td><td>2018-06-13 18:42:20</td><td>Tenis</td><td>Biały sport rządzi</td></tr>
+
+<tr><td>user7</td><td>2018-06-13 18:42:00</td><td>Kino</td><td>Opisy ciekawych filmów</td></tr>
+
+<tr><td>user6</td><td>2018-06-11 20:12:28</td><td>Strona główna</td><td>Piękna main page</td></tr>
+
+<tr><td>user5</td><td>2018-06-11 20:12:03</td><td>Semestr V</td><td>Semestr z topologią</td></tr>
+
+<tr><td>user4</td><td>2018-06-11 20:11:35</td><td>Semestr IV</td><td>Semestr z aisd</td></tr>
+
+<tr><td>user3</td><td>2018-06-11 20:10:47</td><td>Semestr III</td><td>Semestr z prawdopodobieństwem</td></tr>
+
+<tr><td>user2</td><td>2018-06-11 20:09:13</td><td>Semestr II</td><td>Strona zawierająca opis wielu matematycznych kursów</td></tr>
+
+<tr><td>user1</td><td>2018-06-11 20:08:02</td><td>Semestr I</td><td>Bardzo ciekawa strona</td></tr>
+
+		</table>
+</article>
+<footer>
+	<div class="return_to_top">
+		<a href="#H">Up</a>
+	</div>
+</footer>
+</body>
+</html>   
