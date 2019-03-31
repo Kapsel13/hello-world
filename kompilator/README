@@ -1,0 +1,8 @@
+kompilator.l  - plik FLEX kompilatora
+kompilator.y  - plik BISON kompilatora
+interpreter.cc - interpreter wykonujący program na podstawie kodu maszyny rejestrowej
+labor4.pdf - plik z opisem jezyka imperatywnego
+1) kompilacja - polecenie: "make".
+2) ./a.out < IN > OUT ,IN-plik z programem w języku imperatywnym, OUT -plik wynikowy z kodem na maszynę rejestrową
+3) g++ interpreter.cc -o interpreter  
+4) ./interpreter OUT ,OUT - plik wynikowy z kodem na maszynę rejestrową
