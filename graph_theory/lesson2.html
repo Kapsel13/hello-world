@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Lekcja2</title> 
+  <meta name="description" content= "Postrona poświecona zagadnieniom takim jak grafy pełne,dwudzielne i spójne">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/Gfunc.js"></script>
+</head>
+<body><header id="H">
+<a href="index.html">
+	<h1>Marcin Kowalski</h1>
+	<h1>Wybrane elementy teorii grafów</h1>
+</a>
+<h2>Lekcja2: Grafy pełne, dwudzielne i spójne</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.html">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="lesson1.html">Lekcja 1</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+	<div class="link">
+	 <a href="lesson4.html">Lekcja 4</a>
+	</div>
+        <div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson6.html">Lekcja 6</a>
+	</div>
+        <div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+	<div class="link">
+	 <a href="lesson8.html">Lekcja 8</a>
+	</div>
+</nav>
+ <article>
+ <h2>Definicja 1</h2>
+ <section>
+  <div class="definition">
+   <h3>Wierzchołki sąsiednie</h3>
+   <p>&nbsp;&nbsp;Dwa różne wierzchołki grafu są <b>sąsiednie</b>, jeśli połączone są krawędzią.</p>
+  </div>
+ </section>
+ <h2>Definicja 2</h2>
+ <section>
+  <div class="definition">
+   <h3>Graf pełny</h3>
+   <p>&nbsp;&nbsp;<b>Graf pełny</b> - graf prosty, w którym każde dwa różne wierzchołki są sąsiednie nazywamy <b>grafem pełnym</b>.</p>
+  </div>
+ </section>
+ <h2>Przykład 1</h2>
+ <section>
+  <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   <div class="cy"></div>
+   <button onclick="change_full_graph_ex()">Zmień przykład</button>
+  </div>
+  <div class="example">
+   <h3>Przykład 1 - opis</h3>
+   <div class="example_text">
+   </div>
+ </div>
+ </section>
+ <h2>Definicja 3</h2>
+ <section>
+  <div class="definition">
+   <h3>Graf dwudzielny</h3>
+   <p>&nbsp;&nbsp;<b>Graf dwudzielny</b> - graf G nazwiemy dwudzielnym, jeśli każdą krawędź grafu tworzą wierzchołki należące do osobnych zbiorów V1 i V2.</p>
+  </div>
+  </section>
+  <h2>Przykład 2</h2>
+  <section>
+   <div class="chart-container" style="position: relative;height:500px;width:600px;">
+    <div class="cy"></div>
+    <button onclick="change_dual_graph_ex()">Zmień przykład</button>
+   </div>
+   <div class="example">
+    <h3>Przykład 2 - opis</h3>
+    <div class="example_text">
+    </div>
+   </div>
+ </section>
+ <h2>Definicja 4</h2>
+ <section>
+ <div class="definition">
+ <h3>Graf spójny</h3>
+ <p>&nbsp;&nbsp;<b>Graf spójny</b> - graf, który nie może być przedstawiony jako suma dwóch grafów.</p>
+ </div>
+ </section>
+ <h2>Przykład 3</h2>
+ <section>
+   <div class="chart-container" style="position: relative;height:500px;width:600px;">
+    <div class="cy"></div>
+    <button onclick="change_const_graph_ex()">Zmień przykład</button>
+   </div>
+   <div class="example">
+    <h3>Przykład 3 - opis</h3>
+    <div class="example_text">
+    </div>
+   </div>
+ </section>
+    <h2>Teraz sprawdź zdobytą wiedzę w serii ćwiczeń :</h2>
+    <h2>Ćwiczenie 1</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+        <button onclick="change_dual_graph_exc()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 1 - opis</h3>
+      <p>W polu tekstowym poniżej wpisz TAK lub NIE w zależności od tego czy powyższy graf jest dwudzielny, potem nacisnij przycisk <b>check</b>, aby sprawdzić ćwiczenie.<br></p>
+     </div>
+     <div class="area">
+    	 <textarea rows="1" cols="3"></textarea>
+     </div>
+     <button onclick="Check_ex1()">Sprawdź ćwiczenie</button>
+    </section>
+    <h2>Ćwiczenie 2</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+	<button onclick="change_const_graph_exc()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 2 - opis</h3>
+      <p>W polu tekstowym poniżej wpisz TAK lub NIE w zależności od tego czy powyższy graf jest spójny, potem nacisnij przycisk <b>check</b>, aby sprawdzić ćwiczenie.<br></p>
+     </div>
+     <div class="area">
+    	 <textarea rows="1" cols="3"></textarea>
+     </div>
+     <button onclick="Check_ex2()">Sprawdź ćwiczenie</button>
+    </section>
+</article>
+<footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>
+<script>
+     var p=Math.floor((Math.random()*4)+4);
+     var p2=Math.floor(Math.random()*100);
+     var g=new Gfunc(p);
+     var g2=new Gfunc(p);
+     var g3=new Gfunc(p);
+     var g4=new Gfunc(p);
+     var g5=new Gfunc(p);
+     change_full_graph_ex();
+     change_dual_graph_ex();
+     change_const_graph_ex();
+     change_dual_graph_exc();
+     change_const_graph_exc();
+     //pomocnicze funkcje do ćwiczeń
+     function Check_ex1(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        if((str2!="TAK")&&(str2!="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+	}
+        if((g4.checkdual()==0)&&(str2=="NIE")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+         if((g4.checkdual()==0)&&(str2=="TAK")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g4.checkdual()==1)&&(str2=="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g4.checkdual()==1)&&(str2=="TAK")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+     }
+     function Check_ex2(){
+        var str=document.getElementsByClassName("area")[1];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+	if((str2!="TAK")&&(str2!="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+	}
+        if((g5.checkcons()==0)&&(str2=="NIE")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+         if((g5.checkcons()==0)&&(str2=="TAK")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g5.checkcons()==1)&&(str2=="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g5.checkcons()==1)&&(str2=="TAK")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+     }
+     //funkcja pozwala użytkownikowi zmienić przykład grafu pełnego
+    function change_full_graph_ex(){
+        var j=0;
+	p=Math.floor((Math.random()*4)+4);
+    	g=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+      	 g.addVertex(i);
+    	}
+   	g.createRandomfullgraph();
+    	g.graphtodata(0,0);                                                                      
+    	var dataarray=g.data;
+        var ctx2 = document.getElementsByClassName("chart-container")[0];
+	 var ctx= ctx2.getElementsByClassName("cy");
+	 visual(ctx,dataarray,p);
+	var allexamplecontext=document.getElementsByClassName("example")[j];
+    	var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+    	g.setExampleTextfullgraph(allexampletextcontext);
+     }
+     //funkcja pozwala użytkownikowi zmienić przykład grafu dwudzielnego
+     function change_dual_graph_ex(){
+	var j=1;
+	p=Math.floor((Math.random()*4)+4);
+    	g2=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+   	    g2.addVertex(i);
+   	 }
+   	 g2.createRandomplaingraph();
+   	 while(g2.checkdual()==0){
+    	   p=Math.floor((Math.random()*4)+4);
+      	   var g2=new Gfunc(p);
+       	   for(var i=0;i<p;i++){                                                       
+       	   	g2.addVertex(i);
+       	   }
+      	   g2.createRandomplaingraph();
+    	 }
+   	 g2.graphtodata(0,0);
+    	 var dataarray=g2.data;
+    	 var ctx2 = document.getElementsByClassName("chart-container")[1];
+	 var ctx= ctx2.getElementsByClassName("cy");
+	 visual(ctx,dataarray,p);
+	 var allexamplecontext=document.getElementsByClassName("example")[j];
+    	 var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+    	 g2.setExampledualgraph(allexampletextcontext);
+      }
+      //funkcja pozwala użytkownikowi zmienić przykład grafu spójnego
+      function change_const_graph_ex(){
+	 var j=2;
+	 p=Math.floor((Math.random()*4)+4);
+    	 g3=new Gfunc(p);
+    	 for(var i=0;i<p;i++){
+       		g3.addVertex(i);
+    	 }
+    	 g3.createRandomplaingraph();
+    	 g3.graphtodata(0,0);
+   	 while(g3.checkcons()==0){
+       		p=Math.floor((Math.random()*4)+4);
+       		var g3=new Gfunc(p);
+       		for(var i=0;i<p;i++){                                                      
+       			g3.addVertex(i);
+      	        }
+      	        g3.createRandomplaingraph();
+       		g3.graphtodata(0,0);
+    	}
+    	var dataarray=g3.data;
+    	var ctx2 = document.getElementsByClassName("chart-container")[2];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+    	var allexamplecontext=document.getElementsByClassName("example")[j];
+    	var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+    	g3.setExampleconsistgraph(allexampletextcontext);
+      }
+      //funkcja pozwala użytkownikowi zmienić ćwiczenie grafu dwudzielnego
+      function change_dual_graph_exc(){
+	var to_display=0;
+	while(to_display==0){
+		p=Math.floor((Math.random()*4)+4);
+		g4=new Gfunc(p);
+    		for(var i=0;i<p;i++){
+      	 		g4.addVertex(i);
+   		}
+    		g4.createRandomplaingraph();
+		g4.graphtodata(0,0);
+		if(g4.checkdual()==0){
+			p2=Math.floor(Math.random()*100);
+			if(p2<=55){
+				to_display=1;
+			}
+		}
+		else{
+			to_display=1;
+		}
+	}
+    	var dataarray=g4.data;
+    	var ctx2 = document.getElementsByClassName("chart-container")[3];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+      }
+      //funkcja pozwala użytkownikowi zmienić ćwiczenie grafu spójnego
+      function change_const_graph_exc(){
+	var to_display=0;
+	while(to_display==0){
+		p=Math.floor((Math.random()*4)+4);
+		g5=new Gfunc(p);
+    		for(var i=0;i<p;i++){
+      	 		g5.addVertex(i);
+   		}
+    		g5.createRandomplaingraph();
+		g5.graphtodata(0,0);
+		if(g5.checkcons()==1){
+			p2=Math.floor(Math.random()*100);
+			if(p2<=70){
+				to_display=1;
+			}
+		}
+		else{
+			to_display=1;
+		}
+	}
+    	var dataarray=g5.data;
+    	var ctx2 = document.getElementsByClassName("chart-container")[4];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+      }
+</script>	
+</body>
+</html>   

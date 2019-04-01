@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Lekcja4</title> 
+  <meta name="description" content= "Postrona poświecona zagadnieniom takim jak graf eulerowski">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/Gfunc.js"></script>
+</head>
+<body><header id="H">
+<a href="index.html">
+	<h1>Marcin Kowalski</h1>
+	<h1>Wybrane elementy teorii grafów</h1>
+</a>
+<h2>Lekcja4: Grafy eulerowskie</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.html">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="lesson1.html">Lekcja 1</a>
+	</div>
+	<div class="link">
+	 <a href="lesson2.html">Lekcja 2</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+        <div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson6.html">Lekcja 6</a>
+	</div>
+	<div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+	<div class="link">
+	 <a href="lesson8.html">Lekcja 8</a>
+	</div>
+</nav>
+ <article>
+ <h2>Definicja 1</h2>
+ <section>
+ 	<div class="definition">
+	 <h3>Graf eulerowski</h3>
+ 	<p>&nbsp;&nbsp;<b>Graf eulerowski</b> - Graf prosty G jest <b>eulerowski</b>, gdy istnieje ścieżka(w której wszystkie krawędzie są różne), zamknięta zawierająca każdą krawędź grafu G, taką ścieżkę
+ 	nazwiemy wówczas <b>cyklem Eulera</b>.</p>
+ 	</div>
+ </section>
+ <h2>Przykład</h2>
+ <section>
+  <div class="chart-container" style="position: relative;height:500px;width:600px;">
+  <div class="cy"></div>
+   <button onclick="change_euler_graph_ex()">Zmień przykład</button>
+  </div>
+  <div class="example">
+   <h3>Przykład - opis</h3>
+   <div class="example_text">
+   </div>
+ </div>
+ </section>
+  <h2>Teraz sprawdź zdobytą wiedzę w serii ćwiczeń :</h2>
+    <h2>Ćwiczenie 1</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+	<button onclick="change_euler_graph_exc1()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 1 - opis</h3>
+      <p>W polu tekstowym poniżej wpisz TAK lub NIE w zależności od tego czy powyższy graf jest eulerowski, potem nacisnij przycisk <b>check</b>, aby sprawdzić ćwiczenie.<br></p>
+     </div>
+     <div class="area">
+    	 <textarea rows="1" cols="3"></textarea>
+     </div>
+     <button onclick="Check_ex1()">Sprawdź ćwiczenie</button>
+    </section>
+    <h2>Ćwiczenie 2</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+        <button onclick="change_euler_graph_exc2()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 2 - opis</h3>
+       <p>W polu tekstowym poniżej wpisz TAK lub NIE w zależności od tego czy powyższy graf jest eulerowski, potem nacisnij przycisk <b>check</b>, aby sprawdzić ćwiczenie.<br></p>
+     </div>
+     <div class="area">
+    	 <textarea rows="1" cols="3"></textarea>
+     </div>
+     <button onclick="Check_ex2()">Sprawdź ćwiczenie</button>
+    </section>
+</article>
+<footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>
+<script>
+     var p=Math.floor((Math.random()*4)+4);
+     var p2=Math.floor(Math.random()*100);
+     var g=new Gfunc(p);
+     var g2=new Gfunc(p);
+     var g3=new Gfunc(p);
+     change_euler_graph_ex();
+     change_euler_graph_exc1();
+     change_euler_graph_exc2();
+     function Check_ex1(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+	if((str2!="TAK")&&(str2!="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+	}
+        if((g2.check_euler_cycle()==0)&&(str2=="NIE")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+         if((g2.check_euler_cycle()==0)&&(str2=="TAK")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g2.check_euler_cycle()==1)&&(str2=="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g2.check_euler_cycle()==1)&&(str2=="TAK")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+     }
+     function Check_ex2(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+	if((str2!="TAK")&&(str2!="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+	}
+        if((g3.check_euler_cycle()==0)&&(str2=="NIE")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+         if((g3.check_euler_cycle()==0)&&(str2=="TAK")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g3.check_euler_cycle()==1)&&(str2=="NIE")){
+		alert("Niestety ćwiczenie jest wykonane w sposób nieprawidłowy, spróbuj jeszcze raz.");
+        }
+         if((g3.check_euler_cycle()==1)&&(str2=="TAK")){
+		alert("Gratulacje! Ćwiczenie zostało wykonane w sposób prawidłowy.");
+        }
+     }
+     //funckja pozwala użytkownikowi zmienić przykład grafu eulerowskiego
+     function change_euler_graph_ex(){
+	var j=0;
+     	p=Math.floor((Math.random()*4)+4);
+     	g=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+       		g.addVertex(i);
+    	}
+    	g.createRandomplaingraph();
+    	g.graphtodata(0,0);
+    	while(g.check_euler_cycle()==0){
+		p=Math.floor((Math.random()*4)+4);
+		var g=new Gfunc(p);
+    		for(var i=0;i<p;i++){
+       			g.addVertex(i);
+    		}
+		g.createRandomplaingraph();
+    		g.graphtodata(0,0);
+    	}
+    	var dataarray=g.data;
+    	var ctx2 = document.getElementsByClassName("chart-container")[0];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);                                   							
+    	var allexamplecontext=document.getElementsByClassName("example")[j];
+    	var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+    	g.setExampleTextEulercycle(allexampletextcontext);
+    }
+    //funckja pozwala użytkownikowi zmienić ćwiczenie grafu eulerowskiego nr 1
+    function change_euler_graph_exc1(){
+	var to_display=0;
+	while(to_display==0){
+		p=Math.floor((Math.random()*4)+4);
+		g2=new Gfunc(p);
+    		for(var i=0;i<p;i++){
+      	 		g2.addVertex(i);
+   		}
+    		g2.createRandomplaingraph();
+		g2.graphtodata(0,0);
+		if(g2.check_euler_cycle()==0){
+				p2=Math.floor(Math.random()*100);
+				if(p2<=5){
+					to_display=1;
+				}
+		}
+		else{
+			to_display=1;
+		}
+	}
+    	var dataarray=g2.data;
+    	var ctx2 = document.getElementsByClassName("chart-container")[1];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+    }
+    //funckja pozwala użytkownikowi zmienić ćwiczenie grafu eulerowskiego nr 2
+    function change_euler_graph_exc2(){
+	var to_display=0;
+	while(to_display==0){
+		p=Math.floor((Math.random()*4)+4);
+		g3=new Gfunc(p);
+    		for(var i=0;i<p;i++){
+      	 		g3.addVertex(i);
+   		}
+    		g3.createRandomplaingraph();
+		g3.graphtodata(0,0);
+		if(g3.check_euler_cycle()==0){
+				p2=Math.floor(Math.random()*100);
+				if(p2<=5){
+					to_display=1;
+				}
+		}
+		else{
+			to_display=1;
+		}
+	}
+    	var dataarray=g3.data;
+   	var ctx2 = document.getElementsByClassName("chart-container")[2];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+    }
+</script>
+</body>
+</html>   

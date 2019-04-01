@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Lekcja8</title> 
+  <meta name="description" content= "Postrona poświecona zagadnieniom takim jak minimalne drzewo rozpinające i algorytm Prima">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/lessons68.css">
+  <script src="js/Gfunc.js"></script>
+</head>
+<body><header id="H">
+<a href="index.html">
+	<h1>Marcin Kowalski</h1>
+	<h1>Wybrane elementy teorii grafów</h1>
+</a>
+<h2>Lekcja8: Minimalne drzewo rozpinające, algorytm Prima</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.html">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="lesson1.html">Lekcja 1</a>
+	</div>
+	<div class="link">
+	 <a href="lesson2.html">Lekcja 2</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+        <div class="link">
+	 <a href="lesson4.html">Lekcja 4</a>
+	</div>
+        <div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson6.html">Lekcja 6</a>
+	</div>
+	<div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+</nav>
+<article>
+	<h2>Definicja 1</h2>
+ 	<section>
+ 	<div class="definition">
+	 <h3>Drzewo rozpinające grafu</h3>
+ 	<p>&nbsp;&nbsp;<b>Drzewo rozpinające grafu</b> - drzewo zawarte w grafie, którego zbiór wierzchołków równa się zbiorowi wierzchołków grafu.</p>
+ 	</div>
+ 	</section>
+	<h2>Definicja 2</h2>
+ 	<section>
+ 	<div class="definition">
+	 <h3>Minimalne drzewo rozpinające grafu</h3>
+ 	<p>&nbsp;&nbsp;<b>Minimalne drzewo rozpinające grafu</b> - drzewo rozpinające grafu, którego suma wag krawędzi jest minimalna.</p>
+ 	</div>
+ 	</section>
+	<h2>Definicja 3</h2>
+	<section>
+        <div class="row">
+	 <div class="definition">
+	  <h3>Algorytm Prima - opis słowny</h3>
+ 	   <p>&nbsp;&nbsp;<b>Algorytm Prima</b> - algorytm Prima, znajduje dla grafu spójnego,ważonego minimalne drzewo rozpinające. W algorytmie tym postępujemy w następujący sposób. Wybieramy
+	   wierzchołek startowy, tworzymy pusty zbiór Q i tablicę visited, której elementy ustawiamy na false, tablica visited jest dla wszystkich wierzchołków grafu, odwzorowuje przynależność
+	   wierzchołka do minimalnego drzewa rozpinającego. Oznaczamy visited dla wierzchołka startowego jako true. Wierzchołek startowy etykietujemy jako v. Następnie działamy w pętli od 1 do n-1, gdzie 		   n - liczba wierzchołków grafu. W pętli wykonujemy następujące operacje. Dla wszystkich sąsiadów u wierzchołka v, jeśli visited[u] jest false to do zbioru Q dodaj krawędz v-u razem z jej
+	   wagą. Po przejrzeniu wszystkich sąsiadów wierzchołka v, wybieramy ze zbioru Q krawędz v-u o minimalnej wadze, usuwamy ją ze zbioru Q i dodajemy do zbioru T(w zbiorze T będziemy budować minimalne 		   drzewo rozpinające grafu) jeśli visited[u]=false, w przeciwnym wypadku powtarzamy operacje. Następnie pod visited[u] postawiamy true i pod v podstawiamy u. Po zakończeniu działania pętli w  		   zbiorze T znajduje się minimalne drzewo rozpinające grafu .</p>
+  	</div>
+	<div class="pseudo">
+	  <h3>Algorytm Prima - pseudokod</h3>
+	   <p>Dane: Q-pusty zbiór,n-liczba wierzchołków grafu,visited-tablica ,argumentami są wierzchołki grafu ustawiona na false,T-pusty zbiór.</p>
+	   <ol>
+		<li>Wybierz wierzchołek startowy v.</li>
+		<li>Pod visited[v] podstaw true.</li>
+		<li>W pętli od 1 do n-1 wykonuj kroki 4-12.</li>
+		<li>Dla wszystkich sąsiadów u wierzchołka v wykonuj kroki 5, 6.</li>
+		<li>Jeśli visited[u] jest false wykonuj krok 6.</li>
+		<li>Do zbioru Q dodaj krawędź v-u wraz z jej wagą.</li>
+		<li>Wybierz ze zbioru Q krawędź v-u o minimalnej wadze.</li>
+		<li>Usuń krawędź v-u ze zbioru Q.</li>
+		<li>Jesli visited[u] jest równe false wykonaj krok 10 wpp. wróć do kroku 7.</li>
+		<li>Dodaj do zbioru T krawędź v-u.</li>
+		<li>Pod visited[u] podstaw true.</li>
+		<li>Pod v podstaw u.</li>
+		<li>Wydrukuj zbiór T.</li>
+	   </ol>
+         </div>
+        </div>
+ 	</section>
+	<h2>Przykład</h2>
+        <section id="first_example_section">
+       </section>
+	<button onclick="change_prim_alg_ex()">Zmień przykład</button>
+       <h2>Teraz sprawdź zdobytą wiedzę w serii ćwiczeń :</h2>
+    	 <h2>Ćwiczenie 1</h2>
+	 <section>
+     	 <div class="chart-container2" style="position: relative;height:500px;width:600px;">
+         <div class="cy"></div>
+	 <button onclick="change_prim_alg_exc1()">Zmień ćwiczenie</button>
+     	 </div>
+         <div class="exercises">
+      	 <h3>Ćwiczenie 1 - opis</h3>
+           <div class="example_text">
+   	  </div>
+         </div>
+         <div class="area">
+    	  <textarea rows="7" cols="50"></textarea>
+         </div>
+         <button onclick="Check_ex1()">Sprawdź ćwiczenie</button>
+         </section>
+         <h2>Ćwiczenie 2</h2>
+    	 <section>
+     	 <div class="chart-container3" style="position: relative;height:500px;width:600px;">
+   		<div class="cy"></div>
+		<button onclick="change_prim_alg_exc2()">Zmień ćwiczenie</button>
+     	 </div>
+     	 <div class="exercises">
+      	 <h3>Ćwiczenie 2 - opis</h3>
+           <div class="example_text">
+   	  </div>
+         </div>
+         <div class="area">
+    	   <textarea rows="7" cols="50"></textarea>
+     	 </div>
+     	 <button onclick="Check_ex2()">Sprawdź ćwiczenie</button>
+       </section>
+</article>
+ <footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>
+ <script>
+	 var p=Math.floor((Math.random()*4)+4);
+     	var g=new Gfunc(p);
+     	var g2=new Gfunc(p);
+     	var g3=new Gfunc(p);
+	 change_prim_alg_ex();
+	 change_prim_alg_exc1();
+         change_prim_alg_exc2();
+	  //pomocnicze funkcje do sprawdzania ćwiczeń
+    	function Check_ex1(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g2.check_prim(str2);
+    	}
+    	function Check_ex2(){
+        var str=document.getElementsByClassName("area")[1];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g3.check_prim(str2);
+    	}
+         //funkcja pozwala użytkownikowi zmienić przykład algorytmu prima
+        function change_prim_alg_ex(){
+		var sect = document.getElementById("first_example_section");
+		while(sect.firstChild){
+			sect.removeChild(sect.firstChild);               //oczyszczenie strony z wykresóœw grafów
+		}
+		var j=0;
+		p=Math.floor((Math.random()*4)+4);
+    	 	g=new Gfunc(p);
+   	 	for(var i=0;i<p;i++){
+         		g.addVertex(i);
+    	 	}
+    		g.createRandomplaingraph();
+    	 	while(g.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+			g=new Gfunc(p);
+    	 	        for(var i=0;i<p;i++){
+       				g.addVertex(i);
+    	 		}
+	 		g.createRandomplaingraph();
+    	 	}
+		//wydobywam ilość wierzchołków grafu
+    	 	var vert_number=g.noOfVertices;
+		//dorzucam odpowiednią liczbę wykresów grafu i opisów kroków algorytmu w miejsce przykładu na stronie
+		sect=document.getElementById("first_example_section");
+		var step=0;
+		for(var i=0;i<vert_number;i++){
+			var row=document.createElement("div");
+			row.setAttribute('class', 'chart-example-container');
+
+			var container=document.createElement("div");
+			container.setAttribute('class', 'chart-container');
+			container.style.position="relative";
+			container.style.height="500px";
+			container.style.width="600px";
+			sect.appendChild(container);
+
+			var canv=document.createElement("div");
+			canv.setAttribute('class','cy');
+			container.appendChild(canv);
+
+			var weight_edges=document.createElement("div");
+			weight_edges.setAttribute('class', 'weight-of-edges');
+			var h3=document.createElement("h3");
+			var h3t=document.createTextNode("Wagi krawędzi w grafie");
+			h3.appendChild(h3t);
+			var ext=document.createElement("div");
+			ext.setAttribute('class', 'weight-of-edges-text');
+			weight_edges.appendChild(h3);
+			weight_edges.appendChild(ext);
+		
+			row.appendChild(container);
+			row.appendChild(weight_edges);
+
+			var ex=document.createElement("div");
+			ex.setAttribute('class', 'example');
+			h3=document.createElement("h3");
+			var steps=String(step);
+			h3t=document.createTextNode("Krok "+steps);
+			h3.appendChild(h3t);
+			ext=document.createElement("div");
+			ext.setAttribute('class', 'example_text');
+
+			ex.appendChild(h3);
+			ex.appendChild(ext);
+			sect.appendChild(row);
+			sect.appendChild(ex);	
+			step++;
+        	}
+    		var ctx=[];         //tablica kontekstów dla chartów
+		var ctx3=[];        //tablica kontekstów dla informacji o wagach krawędzi
+        	var ctx2=[];        //tablica kontekstów dla informacji o example
+		for(var i=0;i<vert_number;i++){
+			var c0=document.getElementsByClassName("chart-example-container")[i];
+			var c1=c0.getElementsByClassName("chart-container")[0];
+			var c2=c1.getElementsByClassName("cy")[0];
+			ctx.push(c2);
+			c1=c0.getElementsByClassName("weight-of-edges")[0];
+			c2=c1.getElementsByClassName("weight-of-edges-text")[0];
+			ctx3.push(c2);
+			c1=document.getElementsByClassName("example")[i];
+			c2=c1.getElementsByClassName("example_text")[0];
+			ctx2.push(c2);
+		}
+		g.addweigthstoEdges();  //dodaje wagi krawędzi do grafu
+    		g.setExampleTextPrim(ctx,ctx2,ctx3);
+         }
+	//funkcja pozwala użytkownikowi zmienić przykład ćwiczenia prima
+	function change_prim_alg_exc1(){
+		 p=Math.floor((Math.random()*4)+4);
+	 	 g2=new Gfunc(p);
+    	 	 for(var i=0;i<p;i++){
+       	 		g2.addVertex(i);
+    	 	 }
+    	 	 g2.createRandomplaingraph();
+    	 	 g2.graphtodata(0,0);
+    	 	 while(g2.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+	 		g2=new Gfunc(p);
+    	 		for(var i=0;i<p;i++){
+       				g2.addVertex(i);
+    	 		}		
+	 		g2.createRandomplaingraph();
+    	 		g2.graphtodata(0,0);
+         	}                                   
+    	 	var dataarray=g2.data;
+    	 	var ctx2 = document.getElementsByClassName("chart-container2")[0];
+		var ctx= ctx2.getElementsByClassName("cy");
+		visual(ctx,dataarray,p);
+	 	var context=document.getElementsByClassName("exercises")[0];
+	 	var context2=context.getElementsByClassName("example_text");
+	 	g2.addweigthstoEdges();
+	 	g2.prim_exercise_text(context2);
+	}
+	//funkcja pozwala użytkownikowi zmienić przykład ćwiczenia prima
+	function change_prim_alg_exc2(){
+		p=Math.floor((Math.random()*4)+4);
+	 	g3=new Gfunc(p);
+    	 	for(var i=0;i<p;i++){
+       			g3.addVertex(i);
+    	 	}
+    		g3.createRandomplaingraph();
+    	 	g3.graphtodata(0,0);
+    	 	while(g3.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+			g3=new Gfunc(p);
+    	 		for(var i=0;i<p;i++){
+       				g3.addVertex(i);
+    	 		}
+	 		g3.createRandomplaingraph();
+    	 		g3.graphtodata(0,0);
+    	 	}                                   
+    	 	var dataarray=g3.data;
+    	 	var ctx2 = document.getElementsByClassName("chart-container3")[0];
+		var ctx= ctx2.getElementsByClassName("cy");
+		visual(ctx,dataarray,p);
+	 	var context=document.getElementsByClassName("exercises")[1];
+	 	var context2=context.getElementsByClassName("example_text");
+	 	g3.addweigthstoEdges(); 
+		g3.prim_exercise_text(context2);
+	}
+  </script>
+ </body>
+</html>   

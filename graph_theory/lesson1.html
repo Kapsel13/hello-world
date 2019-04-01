@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Lekcja1</title> 
+  <meta name="description" content= "Postrona poświecona zagadnieniom takim jak graf prosty,wierzchołki i krawędzie grafu">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/Gfunc.js"></script>
+</head>
+<body><header id="H">
+<a href="index.html">
+	<h1>Marcin Kowalski</h1>
+	<h1>Wybrane elementy teorii grafów</h1>
+</a>
+<h2>Lekcja1: Graf prosty,wierzchołki i krawędzie grafu</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.html">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="lesson2.html">Lekcja 2</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+	<div class="link">
+	 <a href="lesson4.html">Lekcja 4</a>
+	</div>
+        <div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson6.html">Lekcja 6</a>
+	</div>
+	<div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+	<div class="link">
+	 <a href="lesson8.html">Lekcja 8</a>
+	</div>
+</nav>
+ <article>
+ <h2>Definicja 1</h2>
+ <section>
+  <div class="definition">
+   <h3>Graf prosty</h3>
+   <p>&nbsp;&nbsp;<b>Graf prosty G</b> - para (V(G),E(G)), gdzie V(G) jest skończonym zbiorem elementów zwanych <b>wierzchołkami</b>, a E(G) jest skończonym zbiorem nieuporządkowanych par różnych(w 
+   parach) elementów zbioru V(G) zwanych <b>krawędziami</b>.</p>
+  </div>
+ </section>
+ <h2>Przykład 1</h2>
+ <section>
+   <div class="chart-container" style="position: relative;height:500px;width:600px;">
+    <div class="cy"></div>
+   <button onclick="change_ex1()">Zmień przykład</button>
+  </div>
+  <div class="example">
+   <h3>Przykład 1 - opis</h3>
+   <div class="example_text">
+   </div>
+ </div>
+ </section>
+ <h2>Przykład 2</h2>
+ <section>
+   <div class="chart-container" style="position: relative;height:500px;width:600px;">
+    <div class="cy"></div>
+   <button onclick="change_ex2()">Zmień przykład</button>
+  </div>
+  <div class="example">
+   <h3>Przykład 2 - opis</h3>
+   <div class="example_text">
+   </div>
+ </div>
+ </section>
+    <h2>Teraz sprawdź zdobytą wiedzę w serii ćwiczeń :</h2>
+    <h2>Ćwiczenie 1</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+	 <button onclick="change_exc1()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 1 - opis</h3>
+        <p>W polu tekstowym poniżej wypisz wierzchołki powyższego grafu, a także wszystkie jego krawędzie, potem naciśnij przycisk <b>check</b>, aby sprawdzić ćwiczenie.<br>
+           <b>Uwaga!</b> Wierzchołki podawaj w następującym formacie np:v1 v2 v3 v4 v5, następnie postaw znak ".".Potem podaj krawędzie grafu w następującym formacie:v1-v2 v3-v5 v6-v7.</p>
+     </div>
+     <div class="area">
+    	 <textarea rows="7" cols="50"></textarea>
+     </div>
+     <button onclick="Check_ex1()">Sprawdź ćwiczenie</button>
+    </section>
+    <h2>Ćwiczenie 2</h2>
+    <section>
+     <div class="chart-container" style="position: relative;height:500px;width:600px;">
+   	<div class="cy"></div>
+	<button onclick="change_exc2()">Zmień ćwiczenie</button>
+     </div>
+     <div class="exercises">
+      <h3>Ćwiczenie 2 - opis</h3>
+        <p>W polu tekstowym poniżej wypisz wierzchołki powyższego grafu ,a także wszystkie jego krawędzie, potem naciśnij przycisk <b>check</b>,aby sprawdzić ćwiczenie.<br>
+           <b>Uwaga!</b> Wierzchołki podawaj w następującym formacie np: v1 v2 v3 v4 v5, następnie postaw znak ".". Potem podaj krawędzie grafu w formacie np: v1-v2 v3-v5 v6-v7.</p>
+     </div>
+     <div class="area">
+    	 <textarea rows="7" cols="50"></textarea>
+     </div>
+     <button onclick="Check_ex2()">Sprawdź ćwiczenie</button>
+    </section>
+</article>
+<footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>
+<script>
+   var p=Math.floor((Math.random()*4)+4);
+   var g=new Gfunc(p);
+   var g2=new Gfunc(p);
+   var g3=new Gfunc(p);
+   var g4=new Gfunc(p);
+   change_ex1();                                   //przykład 1
+   change_ex2();                                   //Przykład 2
+   change_exc1();                                  //ćwiczenie1
+   change_exc2();                                  //ćwiczenie 2
+//pomocnicze funkcje do sprawdzania ćwiczeń
+    function Check_ex1(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g3.check(str2);
+    }
+    function Check_ex2(){
+        var str=document.getElementsByClassName("area")[1];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g4.check(str2);
+    }
+    //funckja pozwala użytkownikowi zmienić przykład1
+    function change_ex1(){
+        var j=0;
+	p=Math.floor((Math.random()*4)+4);
+    	g=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+       	 g.addVertex(i);
+    	}
+        g.createRandomplaingraph();
+        g.graphtodata(0,0);
+        var dataarray=g.data; 
+	var ctx2 = document.getElementsByClassName("chart-container")[0];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+        var allexamplecontext=document.getElementsByClassName("example")[j];
+    	var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+   	g.setExampleTextplaingraph(allexampletextcontext);
+    }
+    //funckja pozwala użytkownikowi zmienić przykład2
+    function change_ex2(){
+        var j=1;
+	p=Math.floor((Math.random()*4)+4);
+    	g2=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+       	 g2.addVertex(i);
+    	}
+        g2.createRandomplaingraph();
+        g2.graphtodata(0,0);
+        var dataarray=g2.data; 
+	var ctx2 = document.getElementsByClassName("chart-container")[1];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+        var allexamplecontext=document.getElementsByClassName("example")[j];
+    	var allexampletextcontext=allexamplecontext.getElementsByClassName("example_text");
+        g2.setExampleTextplaingraph(allexampletextcontext);
+    }
+    //funkcja pozwala użytkownikowi zmienić ćwiczenie1
+    function change_exc1(){
+	p=Math.floor((Math.random()*4)+4);
+    	g3=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+       	 g3.addVertex(i);
+    	}
+        g3.createRandomplaingraph();
+        g3.graphtodata(0,0);
+        var dataarray=g3.data; 
+	var ctx2 = document.getElementsByClassName("chart-container")[2];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+    }
+     //funkcja pozwala użytkownikowi zmienić ćwiczenie2
+    function change_exc2(){
+	p=Math.floor((Math.random()*4)+4);
+    	g4=new Gfunc(p);
+    	for(var i=0;i<p;i++){
+       	 g4.addVertex(i);
+    	}
+        g4.createRandomplaingraph();
+        g4.graphtodata(0,0);
+        var dataarray=g4.data; 
+	var ctx2 = document.getElementsByClassName("chart-container")[3];
+	var ctx= ctx2.getElementsByClassName("cy");
+	visual(ctx,dataarray,p);
+    }
+   </script>		
+</body>
+</html>   

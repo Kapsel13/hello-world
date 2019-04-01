@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Teoria grafów</title> 
+  <meta name="description" content= "Główna strona Marcina Kowalskiego poświęcona wybranym zagadnieniom teorii grafów">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/"></script>
+</head>
+<body><header id="H">
+<h1>Marcin Kowalski</h1>
+<h1>Wybrane elementy teorii grafów</h1>
+<h2>Strona główna</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="lesson1.html">Lekcja 1</a>
+	</div>
+	<div class="link">
+	 <a href="lesson2.html">Lekcja 2</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+	<div class="link">
+	 <a href="lesson4.html">Lekcja 4</a>
+	</div>
+	<div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson6.html">Lekcja 6</a>
+	</div>
+	<div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+	<div class="link">
+	 <a href="lesson8.html">Lekcja 8</a>
+	</div>
+</nav>
+ <article>
+ <div class="column">
+  <section>
+  <div class="info">
+      <h3>Krótki opis aplikacji</h3>
+         <p>&nbsp;&nbsp;Aplikacja umożliwia użytkownikowi naukę wybranych elementów teorii grafów. Składa się ze strony głównej oraz kilku podstron. <br><br>&nbsp;&nbsp;
+	 Każda podstrona jest lekcją uczącą pewnego zagadnienia z teorii grafów. Użytkownik może zaznajomić się z danym problemem poprzez zapoznanie się z definicjami i przykładami. Na końcu
+	 każdej lekcji użytkownik może wykonać serię ćwiczeń, które sprawdzają zdobytą przez niego wiedzę. W aplikacji omawiane są następujące zagadnienia:</p><ul>
+	  <li>Lekcja1 - <b>Graf prosty, wierzchołki i krawędzie grafu</b></li>
+          <li>Lekcja2 - <b>Grafy pełne,dwudzielne i spójne</b></li>
+	  <li>Lekcja3 - <b>Drogi i cykle</b></li>
+	  <li>Lekcja4 - <b>Grafy eulerowskie</b></li>
+	  <li>Lekcja5 - <b>Algorytm Fleury'ego</b></li>
+	  <li>Lekcja6 - <b>Algorytm Dijkstry</b></li>
+	  <li>Lekcja7 - <b>Drzewa</b></li>
+	  <li>Lekcja8 - <b>Minimalne drzewo rozpinające, algorytm Prima</b></li>
+	</ul>
+	<p>&nbsp;&nbsp;W dalszej części strony głównej przedstawię kilka zagadnień, w których rozwiązaniu pomocna jest teoria grafów.</p>
+  </div>
+  </section>
+  <section>
+  <div class="info">
+	<h3>Problem komiwojażera</h3>
+	<p>&nbsp;&nbsp;Mamy następujący problem: komiwojażer musi odwiedzić n miast, jest podana również odległość między danymi miastami. Celem jest znalezienie najkrótszej drogi przechodzącej 
+	przez wszystkie miasta, zaczynającej i kończącej się w określonym punkcie. <br><br>&nbsp;&nbsp;Problem ten można rozwiązać za pomocą teorii grafów poprzez znalezienie minimalnego cyklu
+	Hamiltona w danym grafie ważonym.</p>
+   </div>
+   <div class="info">
+	<h3>Zagadnienie mostów królewieckich</h3>
+	<p>&nbsp;&nbsp;Problem ten został rozwiązany w XVIII wieku przez Leonharda Eulera. Przedstawiał się on następująco. Przez Królewiec płyneła rzeka Pregoła. W jej rozwidleniach znajdowały się dwie
+	wyspy. Zbudowano siedem mostów, z których jeden łączył obydwie wyspy, a pozostałe łączyły wyspy z brzegami rzeki. Został postawiony następujący problem: czy można kolejno przejść przez wszystkie 		mosty, tak aby każdy przejść tylko raz?<br><br>&nbsp;&nbsp;Euler wykazał, że nie da się tego zrobić w tym konkretnym przypadku, a przy okazji rozważył inny problem, mianowicie czy mając
+	graf prosty, da się przejść przez wszystkie jego krawędzie, przechodząc każdą tylko raz. Taki graf nazywany jest grafem eulerowskim.</p>
+  </div>
+  </section>
+ </div>
+ <img src="img/graf.png" alt="Graf">
+ <img src="img/komiwojazer.png" alt="TSP">
+ <img src="img/mosty.png" alt="Mosty">
+</article>
+<footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>	
+</body>
+</html>   

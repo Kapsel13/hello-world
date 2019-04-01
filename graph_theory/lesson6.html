@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Marcin Kowalski: Lekcja6</title> 
+  <meta name="description" content= "Postrona poświecona zagadnieniom takim jak algorytm Dijkstry">
+  <meta name="author" content="Marcin Kowalski">
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="css/lessons68.css">
+  <script src="js/Gfunc.js"></script>
+</head>
+<body><header id="H">
+<a href="index.html">
+	<h1>Marcin Kowalski</h1>
+	<h1>Wybrane elementy teorii grafów</h1>
+</a>
+<h2>Lekcja6: Algorytm Dijkstry</h2>
+</header>
+<nav>
+	<div class="link">
+	 <a href="index.html">Strona główna</a>
+	</div>
+	<div class="link">
+	 <a href="lesson1.html">Lekcja 1</a>
+	</div>
+	<div class="link">
+	 <a href="lesson2.html">Lekcja 2</a>
+	</div>
+	<div class="link">
+	 <a href="lesson3.html">Lekcja 3</a>
+	</div>
+        <div class="link">
+	 <a href="lesson4.html">Lekcja 4</a>
+	</div>
+        <div class="link">
+	 <a href="lesson5.html">Lekcja 5</a>
+	</div>
+	<div class="link">
+	 <a href="lesson7.html">Lekcja 7</a>
+	</div>
+	<div class="link">
+	 <a href="lesson8.html">Lekcja 8</a>
+	</div>
+</nav>
+  <article>
+	<h2>Definicja 1</h2>
+ 	<section>
+ 	<div class="definition">
+	 <h3>Graf ważony</h3>
+ 	<p>&nbsp;&nbsp;<b>Graf ważony</b> - graf prosty, w którym każda krawędź ma określoną <b>wagę</b> w postaci liczby naturalnej.</p>
+ 	</div>
+ 	</section>
+	<h2>Definicja 2</h2>
+ 	<section>
+        <div class="row">
+ 	 <div class="definition">
+	 <h3>Algorytm Dijkstry - opis słowny</h3>
+ 	  <p>&nbsp;&nbsp;<b>Algorytm Dijkstry</b> - Algorytmu Dijkstry używamy jest do wyznaczenia najkrótszej ścieżki od podanego wierzchołka do wszystkich innych w grafie <b>ważonym</b>.
+	  Jego działanie jest następujące: Mamy  zbiór Q zawierający wszystkie wierzchołki grafu, tablicę d, w której wszystkie wierzchołki mają wartość nieskończoność, oprócz wierzchołka startowego
+	  , który ma wartość 0. W algorytmie występuje również tablica p, która dla wszystkich wierzchołków przyjmuje wartość -1. Powtarzamy następujący proces, dopóki zbiór Q posiada jeszcze jakieś 
+	  elementy: Wybieramy ze zbioru Q wierzchołek v o minimalnej wartości w tablicy d, usuwamy go ze zbioru Q. Następnie dla każdego sąsiada u wierzchołka v, który jest w Q, sprawdzamy czy d[u]>d   		  [v]+waga krawędzi (v,u), jeśli tak to pod d[u] podstawiamy d[v]+waga krawędzi(v,u) i pod p[u] podstawiamy v. Po zakończeniu powyższego procesu w tablicy d otrzymujemy koszt dojścia od startowego 		  wierzchołka do wszystkich pozostałych w grafie, a w tablicy p dla każdego wierzchołka v, jego poprzednika na najkrótszej ścieżce od wierzchołka startowego do wierzchołka v.</p>
+ 	 </div>
+	 <div class="pseudo">
+	   <h3>Algorytm Dijkstry - pseudokod</h3>
+            <p>Dane: Q-zbiór wszystkich wierzchołków grafu, E-zbiór wszystkich krawędzi grafu, d-tablica, której argumentami są wszystkie wierzchołki grafu, na początku dla wszystkich argumentów 	    		    przyjmuje wartość nieskończoność, p-tablica, jej argumentami są wszystkie wierzchołki grafu, na początku dla wszystkich argumentów przyjmuje wartość -1.</p>
+	    <ol>
+		<li>Wybierz wierzchołek startowy i oznacz go jako v.</li>
+		<li>Pod d[v] podstaw 0.</li>
+		<li>Dopóki Q posiada jakieś elementy powtarzaj kroki 4-9, wpp. przejdź do kroku 10.</li> 
+		<li>Wybierz ze zbioru Q wierzchołek u: d[u] jest minimalnym elementem tablicy d.</li>
+		<li>Usuń wierzchołek u ze zbioru Q.</li>
+		<li>Dla każdego sąsiada w  wierzchołka u, który jest w Q wykonaj kroki 7-9.</li>
+		<li>Jeśli d[u] + waga krawędzi u-w jest mniejsza niż d[w] to wykonaj kroki 8-9.</li>
+		<li>Podstaw pod d[w] sumę d[u] i wagi krawędzi u-w.</li>
+		<li>Podstaw pod p[w] wartość zmiennej u.</li>
+		<li>Wydrukuj tablice d i p</li>
+	   </ol> 	
+         </div>
+        </div>
+        </section>
+	<h2>Przykład</h2>
+	<section id="first_example_section">
+       </section>
+	<button onclick="change_dijkstra_alg_ex()">Zmień przykład</button>
+        <h2>Teraz sprawdź zdobytą wiedzę w serii ćwiczeń :</h2>
+    	 <h2>Ćwiczenie 1</h2>
+	 <section>
+     	 <div class="chart-container2" style="position: relative;height:500px;width:600px;">
+         <div class="cy"></div>
+         <button onclick="change_dijkstra_alg_exc1()">Zmień ćwiczenie</button>
+     	 </div>
+         <div class="exercises">
+      	 <h3>Ćwiczenie 1 - opis</h3>
+           <div class="example_text">
+   	  </div>
+         </div>
+         <div class="area">
+    	  <textarea rows="7" cols="50"></textarea>
+         </div>
+         <button onclick="Check_ex1()">Sprawdź ćwiczenie</button>
+         </section>
+         <h2>Ćwiczenie 2</h2>
+    	 <section>
+     	 <div class="chart-container3" style="position: relative;height:500px;width:600px;">
+   		<div class="cy"></div>
+		<button onclick="change_dijkstra_alg_exc2()">Zmień ćwiczenie</button>
+     	 </div>
+     	 <div class="exercises">
+      	 <h3>Ćwiczenie 2 - opis</h3>
+           <div class="example_text">
+   	  </div>
+         </div>
+         <div class="area">
+    	   <textarea rows="7" cols="50"></textarea>
+     	 </div>
+     	 <button onclick="Check_ex2()">Sprawdź ćwiczenie</button>
+       </section>
+  </article>
+  <footer>
+	<div class="return_to_top">
+		<a href="#H">Do góry</a>
+	</div>
+</footer>
+ <script>
+	 var p=Math.floor((Math.random()*4)+4);
+    	 var g=new Gfunc(p);
+     	 var g2=new Gfunc(p);
+     	 var g3=new Gfunc(p);
+	 change_dijkstra_alg_ex();
+	 change_dijkstra_alg_exc1();
+         change_dijkstra_alg_exc2();
+	  //pomocnicze funkcje do sprawdzania ćwiczeń
+    	function Check_ex1(){
+        var str=document.getElementsByClassName("area")[0];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g2.check_dijsktra(str2);
+    	}
+    	function Check_ex2(){
+        var str=document.getElementsByClassName("area")[1];
+        var str2=str.getElementsByTagName('textarea')[0].value;
+        g3.check_dijsktra(str2);
+    	}
+	 //funckja pozwala użytkownikowi zmienić przykład algorytmu dijkstry
+        function change_dijkstra_alg_ex(){
+		var sect = document.getElementById("first_example_section");
+		while(sect.firstChild){
+			sect.removeChild(sect.firstChild);               //oczyszczenie strony z wykresóœw grafów
+		}
+		var j=0;
+	 	p=Math.floor((Math.random()*4)+4);
+    	 	g=new Gfunc(p);
+   	 	for(var i=0;i<p;i++){
+         		g.addVertex(i);
+    	 	}
+    	 	g.createRandomplaingraph();
+    	 	while(g.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+			 g=new Gfunc(p);
+    	 		for(var i=0;i<p;i++){
+       				g.addVertex(i);
+    	 		}
+	 		g.createRandomplaingraph();
+    	 	}
+    	 	//wydobywam ilość wierzchołków grafu
+    	 	var vert_number=g.noOfVertices;
+		//dorzucam odpowiednią liczbę wykresów grafu i opisów kroków algorytmu w miejsce przykładu na stronie
+		var sect=document.getElementById("first_example_section");
+		var step=0;
+		for(var i=0;i<=vert_number;i++){
+			var row=document.createElement("div");
+			row.setAttribute('class', 'chart-example-container');
+
+			var container=document.createElement("div");
+			container.setAttribute('class', 'chart-container');
+			container.style.position="relative";
+			container.style.height="500px";
+			container.style.width="600px";
+			sect.appendChild(container);
+
+			var canv=document.createElement("div");
+			canv.setAttribute('class','cy');
+			container.appendChild(canv);
+
+			var weight_edges=document.createElement("div");
+			weight_edges.setAttribute('class', 'weight-of-edges');
+			var h3=document.createElement("h3");
+			var h3t=document.createTextNode("Wagi krawędzi w grafie");
+			h3.appendChild(h3t);
+			var ext=document.createElement("div");
+			ext.setAttribute('class', 'weight-of-edges-text');
+			weight_edges.appendChild(h3);
+			weight_edges.appendChild(ext);
+		
+			row.appendChild(container);
+			row.appendChild(weight_edges);
+
+			var ex=document.createElement("div");
+			ex.setAttribute('class', 'example');
+			h3=document.createElement("h3");
+			var steps=String(step);
+			h3t=document.createTextNode("Krok "+steps);
+			h3.appendChild(h3t);
+			ext=document.createElement("div");
+			ext.setAttribute('class', 'example_text');
+
+			ex.appendChild(h3);
+			ex.appendChild(ext);
+			sect.appendChild(row);
+			sect.appendChild(ex);	
+			step++;
+        	}
+    		var ctx=[];         //tablica kontekstów dla chartów
+		var ctx3=[];        //tablica kontekstów dla informacji o wagach krawędzi
+        	var ctx2=[];        //tablica kontekstów dla informacji o example
+		for(var i=0;i<=vert_number;i++){
+			var c0=document.getElementsByClassName("chart-example-container")[i];
+			var c1=c0.getElementsByClassName("chart-container")[0];
+			var c2=c1.getElementsByClassName("cy")[0];
+			ctx.push(c2);
+			c1=c0.getElementsByClassName("weight-of-edges")[0];
+			c2=c1.getElementsByClassName("weight-of-edges-text")[0];
+			ctx3.push(c2);
+			c1=document.getElementsByClassName("example")[i];
+			c2=c1.getElementsByClassName("example_text")[0];
+			ctx2.push(c2);
+		}
+		g.addweigthstoEdges();  //dodaje wagi krawędzi do grafu
+    	 	g.setExampleTextDijkstraalg(ctx,ctx2,ctx3);
+	}
+        //funckja pozwala użytkownikowi zmienić ćwiczenie algorytmu dijkstry
+	function change_dijkstra_alg_exc1(){
+		 p=Math.floor((Math.random()*4)+4);
+	 	 g2=new Gfunc(p);
+    	 	for(var i=0;i<p;i++){
+       	 		g2.addVertex(i);
+    	 	}
+    	 	g2.createRandomplaingraph();
+    		g2.graphtodata(0,0);
+    	 	while(g2.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+	 		g2=new Gfunc(p);
+    	 		for(var i=0;i<p;i++){
+       				g2.addVertex(i);
+    	 		}
+	 		g2.createRandomplaingraph();
+    	 		g2.graphtodata(0,0);
+         	}                                   
+    	 	var dataarray=g2.data;
+    	 	var ctx2 = document.getElementsByClassName("chart-container2")[0];
+		var ctx= ctx2.getElementsByClassName("cy");
+		visual(ctx,dataarray,p);
+	 	var context=document.getElementsByClassName("exercises")[0];
+	 	var context2=context.getElementsByClassName("example_text");
+	 	g2.addweigthstoEdges();
+	 	g2.dijsktra_exercise_text(context2);
+	}
+        //funckja pozwala użytkownikowi zmienić ćwiczenie algorytmu dijkstry
+	function change_dijkstra_alg_exc2(){
+		 p=Math.floor((Math.random()*4)+4);
+	 	 g3=new Gfunc(p);
+    	 	for(var i=0;i<p;i++){
+       			g3.addVertex(i);
+    		}
+    	 	g3.createRandomplaingraph();
+    	 	g3.graphtodata(0,0);
+    	 	while(g3.checkcons()==0){
+	 		p=Math.floor((Math.random()*4)+4);
+	 		g3=new Gfunc(p);
+    	 		for(var i=0;i<p;i++){
+       				g3.addVertex(i);
+    	 		}
+	 		g3.createRandomplaingraph();
+    	 		g3.graphtodata(0,0);
+    	 	}                                   
+    	 	var dataarray=g3.data;
+    	 	var ctx2 = document.getElementsByClassName("chart-container3")[0];
+		var ctx= ctx2.getElementsByClassName("cy");
+		visual(ctx,dataarray,p);
+	 	var context=document.getElementsByClassName("exercises")[1];
+	 	var context2=context.getElementsByClassName("example_text");
+	 	g3.addweigthstoEdges(); 
+	 	g3.dijsktra_exercise_text(context2);
+	 }
+ </script>
+ </body>
+</html>   
