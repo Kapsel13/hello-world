@@ -1,0 +1,11 @@
+import BrokenArrow from "./moviePictures/BrokenArrow.jpg";
+import LordOfTheRings from "./moviePictures/Lord_of_the_rings.jpg";
+import Terminator from "./moviePictures/Terminator.jpg";
+import Rocky from "./moviePictures/Rocky.jpg";
+import Titanic from "./moviePictures/Titanic.jpg";
+import Gladiator from "./moviePictures/Gladiator.jpg";
+import DarkKnight from "./moviePictures/dark_knight.jpg";
+import Godfather from "./moviePictures/Godfather.jpg";
+import JurasicPark from "./moviePictures/jurassic_park.jpg";
+const moviePictures = [BrokenArrow,LordOfTheRings,Terminator,Rocky,Titanic,Gladiator,DarkKnight,Godfather,JurasicPark];
+export default moviePictures;

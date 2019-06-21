@@ -1,0 +1,11 @@
+import BrokenArrow from "./moviesongs/BrokenArrow.mp3";
+import LordOfTheRings from "./moviesongs/Lotr.mp3";
+import Terminator from "./moviesongs/Terminator.mp3";
+import Rocky from "./moviesongs/Rocky.mp3";
+import Titanic from "./moviesongs/Titanic.mp3";
+import Gladiator from "./moviesongs/Gladiator.mp3";
+import DarkKnight from "./moviesongs/DarkKnight.mp3";
+import Godfather from "./moviesongs/Godfather.mp3";
+import JurasicPark from "./moviesongs/JurassicPark.mp3";
+const movieThemes = [BrokenArrow,LordOfTheRings,Terminator,Rocky,Titanic,Gladiator,DarkKnight,Godfather,JurasicPark];
+export default movieThemes;
