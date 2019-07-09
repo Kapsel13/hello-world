@@ -1,0 +1,49 @@
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
+h1,h2{
+  width: 100%;
+  text-align:center;
+}
+hr{
+  color: whitesmoke;
+}
+.note-app-content{
+  margin: auto;
+  width: 60%;
+  padding: 30px;
+}
+.add-button,.delete-button,.save-button{
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+.add-button{
+  display:block;
+  margin:auto;
+}
+.delete-button,.save-button{
+  display: inline-block;
+}
+.delete-button{
+  margin-left:370px;
+  margin-right: 160px;
+}
+textarea{
+  width: 350px;
+  height: 300px;
+  display:block;
+  margin:auto;
+  margin-bottom: 30px;
+}
+.note{
+  width: 500px;
+  display:block;
+  margin:auto;
+}
+.note-app-content hr{
+  width: 500px;
+}
