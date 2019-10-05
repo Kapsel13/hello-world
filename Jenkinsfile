@@ -1,12 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('--open repository--') { 
+        stage('--Display a failure message--') { 
             steps {
-                sh "cd hello-world"
+                sh "echo '---------------------'"
+                sh "echo 'Failure'"
+                sh "echo '---------------------'"
             }
         }
-        stage('--Display a message--') { 
+        stage('--Display a success message--') { 
             steps {
                 sh "echo '---------------------'"
                 sh "echo 'Sucess'"
